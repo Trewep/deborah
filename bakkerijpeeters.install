@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function bakkerijpeeters_schema()
+{
+  $schema['bakkerijpeeters_bestellingen'] = [
+    'fields' => [
+      'id' => [
+        'description' => 'The primary identifier.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+
+      'firstname' => [
+        'description' => 'Firstname person ',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'lastname' => [
+        'description' => 'lastname person ',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'tel' => [
+        'description' => 'Telephone person ',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'type' => [
+        'description' => 'Bread? or coffee? or both ',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'items' => [
+        'description' => 'list of items',
+        'type' => 'varchar',
+        'length' => 500,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'orderdate' => [
+        'description' => 'timestamp when the items where ordered',
+        'type' => 'int',
+        'default' => 0,
+        'unsigned' => true,
+        'not null' => true
+      ],
+    ],
+    'primary key' => [
+      'id',
+    ],
+  ];
+  return $schema;
+}
+
+
+function bakkerijpeeters_update_8001()
+{
+  $database = Drupal::database();
+  $schema = $database->schema();
+  $table_name = 'bakkerijpeeters_bestellingen';
+  $table_schema =  bakkerijpeeters_schema();
+  $schema->createTable($table_name, $table_schema['bakkerijpeeters_bestellingen']);
+}

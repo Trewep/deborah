@@ -1,0 +1,7 @@
+bakkerij_peeters.orders.overview:
+  path: '/admin/config/user-interface/bakkerijpeeters/bestellingen'
+  defaults:
+    _controller: '\Drupal\bakkerijpeeters\Controller\OverviewController::getOrders'
+    _title: 'Instellingen voor Bakkerij Peeters'
+  requirements:
+    _permission: 'access administration pages'

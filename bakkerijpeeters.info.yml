@@ -1,0 +1,8 @@
+name: 'Bakkerij Peeters'
+type: module
+description: 'Bestelformulier voor Bakkerij Peeters'
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+version: 1.0
+
+

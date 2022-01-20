@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function bakkerij_peeters_theme()
+{
+  return [
+    'overview' => [
+      'variables' => [
+        'orders' => []
+      ]
+    ],
+    'itemOverview' => [
+      'variables' => [
+        'items' => []
+      ]
+    ]
+  ];
+}

@@ -1,0 +1,7 @@
+bakkerij_peeters.orders.overview:
+  title: 'Bestellingen Bakkerij peeters'
+  parent: system.admin_config_ui
+  description: 'Alle bestellingen Bakkerij Peeters.'
+  route_name: bakkerij_peeters.orders.overview
+
+
